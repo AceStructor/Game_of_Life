@@ -1,6 +1,6 @@
 #include "RowLinkedList.h"
 #include "FreeList.h"
-#include "Cell.h"
+//#include "Cell.h"
 
 RowLinkedList::RowLinkedList()
 {
@@ -63,10 +63,9 @@ Item * RowLinkedList::insertAfter(long x, Item * a)
 {
     freeList->checkFreeList();
     Item * b = freeList->first();
-    //Cell * c = new Cell()
     moveAfter(b, a);
     b->row = x;
-    //b->columnDummy = new Item()
+    b->columnDummy = new Item(0, b->columnDummy, b->columnDummy);
     return b;
 }
 
