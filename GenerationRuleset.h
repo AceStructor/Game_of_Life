@@ -15,8 +15,8 @@ class GenerationRuleset
         virtual long getPosX();
         virtual long getPosY();
     
-        virtual bool findCell(long posX, long posY); //see findCellFlowchart.pdf Returns True if Cell exists.
-	    virtual bool getCellState(long posX, long posY); //returns true for living and false for dead.
+        virtual bool findCell(long posX, long posY, bool genCheck); //see findCellFlowchart.pdf Returns True if Cell exists.
+	virtual bool getCellState(long posX, long posY); //returns true for living and false for dead.
         virtual void createNewLivingCell(long posX, long posY); //see createNewLivingCellFlowchart.pdf
     
         virtual void killCell(long posX, long posY); //Sets state to dead. If an adacient cell is living, the memory stays allocated. If all adacient cells are dead, the memory must be cleared AND the function has to be called for ALL adacient cells. The cell then also has to be deleted from row and column list.
